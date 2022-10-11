@@ -1,0 +1,60 @@
+---
+layout: compress
+---
+
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "tr-TR" }}">
+{% include head.html %}
+
+<body>
+  <main>
+    {% include header.html %}
+    {% include anchor_headings.html html=content anchorBody="#" %}
+    {% include footer.html %}
+  </main>
+  <script src="{{ site.url }}{{ site.baseurl }}{{ "/assets/js/main.js?v=" | append: site.github.build_revision | relative_url }}"></script>
+
+  {% if page.url == '/blog/' %}
+  <script src="{{ site.url }}{{ site.baseurl }}/assets/js/simple-jekyll-search.js"></script>
+  <script>
+    let sjs = SimpleJekyllSearch({
+      searchInput: document.getElementById('search-input'),
+      resultsContainer: document.getElementById('search-results'),
+          json: '{{ site.url }}{{ site.baseurl }}/search.json',
+      searchResultTemplate: '<li><a href="{url}" title="{description}">{title}</a></li>',
+      noResultsText: 'Sonuç bulunamadı...',
+      limit: 10,
+      fuzzy: true,
+    })
+  </script>
+  {% endif %}
+
+  {% if page.url == '/gallery/' or page.url == '/portfolio/' %}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js" integrity="sha512-q583ppKrCRc7N5O0n2nzUiJ+suUv7Et1JGels4bXOaMFQcamPk9HjdUknZuuFjBNs7tsMuadge5k9RzdmO+1GQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    const unsplash_gallery = document.getElementById("unsplash-gallery");
+    const client_id = "{{ site.unsplash_api }}";
+
+    fetch("https://api.unsplash.com/users/{{ site.unsplash_username }}/photos/?client_id={{ site.unsplash_api }}&per_page=100")
+      .then((v) => v.json())
+      .then((p) =>
+        p.map(({ urls }) => {
+          unsplash_gallery.innerHTML += generateHTML(urls);
+        })
+      );
+
+    const generateHTML = (urls) => {
+      return `
+        <div class="masonry-item">
+          <a data-fancybox="gallery" data-src="${urls.regular}">
+            <img loading="lazy" src="/assets/img/default-content-image.svg" data-src="${urls.thumb}" class="lazyload" width="210" height="280" alt="image" />
+          </a>
+        </div>
+      `;
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+  {% endif %}
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+---
+layout: default
+---
+
+<section class="posts" id="Blog">
+  <div class="d-flex align-items-center justify-content-between">
+      <h2> BLOG</h2>
+      <a href="{{ site.url }}{{ site.baseurl }}/tag/" class="mb-1-5">#tags</a>
+  </div>
+  <div class="search-article">
+      <input type="search" id="search-input" autocomplete="off" placeholder="Blog başlığı ara...">
+      <ul id="search-results"></ul>
+  </div>
+  <ul>
+      {% for post in site.posts %}
+      <li>
+      <a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %d, %Y" }}</time>
+      </li>
+      {% endfor %}
+  </ul>
+</section>

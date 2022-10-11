@@ -1,0 +1,81 @@
+---
+layout: default
+---
+
+<div class="about-page">
+    <div class="about-page-sidebar">
+        <section id="author-picture">
+            <div class="intro-about-image">
+                <picture>
+                    <source type="image/webp" srcset="{{site.author.picture}}.webp" />
+                    <source type="image/jpeg" srcset="{{site.author.picture}}.jpg" />
+                    <img loading="lazy" src="{{site.author.picture}}.jpg" width="301" height="535" alt="Profile Picture" />
+                </picture>
+            </div>
+        </section>
+    </div>
+    <div class="about-page-content">
+        <section id="about">
+            <div class="intro-about-content">
+                <div class="mb-2">
+                    <h2 class="d-flex align-items-center mb-0">Selamlar, Ben Hasan</h2>
+                    <p>- Front-end Developer</p>
+                </div>
+            </div>
+            <p>
+                Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini
+                alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik
+                dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü
+                yayıncılık yazılımları ile popüler olmuştur.
+            </p>
+            {% if site.repo %}
+            <blockquote class="mb-2">
+                Bu web sitesinin kaynak kodlarına <a href="{{site.repo | relative_url}}" target="_blank" rel="noopener noreferrer" class="text-underline">Github</a> üzerinden erişebilirsiniz.
+            </blockquote>
+            {% endif %}
+            <div class="d-flex flex-wrap align-items-center gap-10">
+                {% if site.author.email %}
+                <div class="contact-icon">
+                    <a href="mailto:{{site.author.email}}?subject=" rel="noopener noreferrer"> <i class="icon icon-mail"></i> E-Posta </a>
+                </div>
+                {% endif %} {% if site.author.linkedin %}
+                <div class="contact-icon">
+                    <a href="https://linkedIn.com/in/{{site.author.linkedin}}" tooltip="LinkedIn Profili" placement="down" target="_blank" rel="noopener noreferrer">
+                        <i class="icon icon-linkedin"></i>
+                    </a>
+                </div>
+                {% endif %} {% if site.author.twitter %}
+                <div class="contact-icon">
+                    <a href="https://twitter.com/{{site.author.twitter}}" tooltip="Twitter Profili" placement="down" target="_blank" rel="noopener noreferrer">
+                        <i class="icon icon-twitter"></i>
+                    </a>
+                </div>
+                {% endif %} {% if site.author.facebook %}
+                <div class="contact-icon">
+                    <a href="https://facebook.com/{{site.author.facebook}}" tooltip="Facebook Profili" placement="down" target="_blank" rel="noopener noreferrer">
+                        <i class="icon icon-facebook"></i>
+                    </a>
+                </div>
+                {% endif %} {% if site.author.instagram %}
+                <div class="contact-icon">
+                    <a href="https://instagram.com/{{site.author.instagram}}" tooltip="Instagram Profili" placement="down" target="_blank" rel="noopener noreferrer">
+                        <i class="icon icon-instagram"></i>
+                    </a>
+                </div>
+                {% endif %} {% if site.author.codepen %}
+                <div class="contact-icon">
+                    <a href="https://codepen.io/{{site.author.codepen}}" tooltip="CodePen Profili" placement="down" target="_blank" rel="noopener noreferrer">
+                        <i class="icon icon-codepen"></i>
+                    </a>
+                </div>
+                {% endif %} {% if site.author.github %}
+                <div class="contact-icon">
+                    <a href="https://github.com/{{site.author.github}}" tooltip="Github Profili" placement="down" target="_blank" rel="noopener noreferrer">
+                        <i class="icon icon-github"></i>
+                    </a>
+                </div>
+                {% endif %}
+            </div>
+        </section>
+    </div>
+</div>

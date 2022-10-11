@@ -1,0 +1,19 @@
+---
+layout: default
+---
+
+<section class="project-detail">
+	<article id="contact-content">
+		<h1 class="project-title">{{ page.title }}</h1>
+		<div class="project-image">
+			<img src="{{ site.url }}{{ site.baseurl }}{{ page.image_big }}">
+		</div>
+		<div class="d-block mb-2">
+			{% if page.link %}
+			<a href="//{{ page.link | relative_url }}" rel="nofollow" target="_blank" class="project-link">{{ page.link }}</a>
+			{% endif %}
+			<time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%b %-d, %Y" }}</time>
+		</div>
+		{{ content }}
+	</article>
+</section>

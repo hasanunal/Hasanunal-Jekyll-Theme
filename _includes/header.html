@@ -1,0 +1,24 @@
+<header>
+    <a href="{{ site.url }}{{ site.baseurl }}" class="logo">{{ site.logo }}</a>
+    <div class="d-flex align-items-center">
+        <button title="Change theme" id="theme-toggle" onclick="modeSwitcher()">
+            <div></div>
+        </button>
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="backdrop"></label>
+        <div class="menu-toggle-wrapper">
+            <label class="hamburger-menu" for="menu-toggle">
+                <span></span>
+            </label>
+        </div>
+        <nav class="menu">
+            <ul>
+                <li><a href="{{ site.url }}{{ site.baseurl }}" class="logo-mobile">{{ site.logo }}</a></li>
+                <li><a href="{{ site.url }}{{ site.baseurl }}/about">Hakkımda</a></li>
+                <li><a href="{{ site.url }}{{ site.baseurl }}/gallery">Fotoğraflar</a></li>
+                <li><a href="{{ site.url }}{{ site.baseurl }}/portfolio">Porfolyo</a></li>
+                <li><a href="{{ site.url }}{{ site.baseurl }}/blog">Yazılar</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>

@@ -1,0 +1,25 @@
+---
+layout: default
+title: Portfolio
+---
+
+<section id="portfolio">
+	<h1 class="page-header">Porfolyo</h1>
+	<div class="row">
+	{% assign sorted_pages = site.projects | sort:"date" | reverse %}
+	{% for project in sorted_pages %}
+		<article class="col-12 col-lg-6">
+			<a href="{{ site.url }}{{ site.baseurl }}{{ project.url }}">
+			<div class="portfolio-content">
+					<div class="portfolio-image">
+						<img loading="lazy" src="{{ site.url }}{{ site.baseurl }}/assets/img/default-content-image.svg" data-src="{{ site.url }}{{ site.baseurl }}{{ project.image_cover }}" class="lazyload" width="950" height alt="{{ project.title }}" />
+					</div>
+					<div class="portfolio-text">
+						<span>{{ project.title }}</span>
+					</div>
+				</div>
+			</a>
+		</article>
+	{% endfor %}
+	</div>
+</section>

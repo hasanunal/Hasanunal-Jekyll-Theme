@@ -1,0 +1,22 @@
+<footer class="social-footer">
+    <div class="social-footer-icons">
+        <a href="{{site.url}}{{ site.baseurl }}/atom.xml" tooltip="RSS" placement="down" target="_blank" rel="noopener noreferrer">
+            <i class="icon icon-rss"></i>
+        </a>
+        {% if site.author.github %}
+            <a href="https://github.com/{{site.author.github}}" tooltip="Github Profili" placement="down" target="_blank" rel="noopener noreferrer">
+                <i class="icon icon-github"></i>
+            </a>
+        {% endif %}
+        {% if site.author.linkedin %}
+            <a href="https://linkedIn.com/in/{{site.author.linkedin}}" tooltip="LinkedIn Profili" placement="down" target="_blank" rel="noopener noreferrer">
+                <i class="icon icon-linkedin"></i>
+            </a>
+        {% endif %}
+        {% if site.repo %}
+            <a href="{{site.repo | relative_url}}" tooltip="Projenin Kaynak Kodları" placement="down" target="_blank" rel="noopener noreferrer">
+                <i class="icon icon-code"></i>
+            </a>
+        {% endif %}
+    </div>
+</footer>

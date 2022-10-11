@@ -1,0 +1,98 @@
+site: hasanunal
+title: Hasan ÜNAL
+logo: HasanUNAL
+description: >-
+  Front-end Developer
+lang: tr
+repo: https://github.com/hasanunal/hasanunal-jekyll # site repo [isteğe bağlı]
+data-theme: dark # varsayılan tema "dark" | "light"
+
+google_analytics: # Google Analytics ID [isteğe bağlı]
+google_site_verification: # Google Site Verification ID [isteğe bağlı]
+
+unsplash_api:  # client_id
+unsplash_username: # unsplash kullanıcı adı
+
+locale: "tr"
+author:
+  name: hasanunal
+  bio: front-end developer, personal blog
+  picture: https://hasanunal.github.io/hasanunal-jekyll/assets/img/profile-picture/pp # jpg ve webp formatında eklenmeli
+  username: hasanunal # kullanıcı adı
+  github: 
+  codepen: 
+  twitter:
+  instagram:
+  facebook:
+  linkedin: 
+  email: # mail adresi
+
+# Font Ayarları
+googlewebfonts: family=Ubuntu:wght@300;400;500;700&family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,300;1,400;1,500;1,600;1,700;1,900
+
+# URL Ayarları
+url: "https://hasanunal.github.io/hasanunal-jekyll/" # domain adresi
+baseurl: "" # alt dizine kurduysan eğer
+permalink: pretty
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+exclude:
+  - .jekyll-cache
+  - .obsidian
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE.md
+  - README.md
+  - CONTRIBUTING.md
+  
+compress_html:
+  clippings: all
+  comments: ["<!-- ", " -->"]
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-relative-links
+
+collections:
+  pages:
+    output: true
+    permalink: /:name
+  posts:
+    output: true
+    permalink: /blog/:slug
+  projects:
+    output: true
+    permalink: /project/:slug
+
+  
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: "default"
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+relative_links:
+  enabled: true
+  collections: false
