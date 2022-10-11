@@ -4,7 +4,7 @@ logo: HasanUNAL
 description: >-
   Front-end Developer
 lang: tr
-repo: https://github.com/hasanunal/hasanunal-jekyll # site repo [isteğe bağlı]
+repo: https://hasanunal.github.io/Hasanunal-Jekyll-Theme/ # site repo [isteğe bağlı]
 data-theme: dark # varsayılan tema "dark" | "light"
 
 google_analytics: # Google Analytics ID [isteğe bağlı]
@@ -17,7 +17,7 @@ locale: "tr"
 author:
   name: hasanunal
   bio: front-end developer, personal blog
-  picture: https://hasanunal.github.io/hasanunal-jekyll/assets/img/profile-picture/pp # jpg ve webp formatında eklenmeli
+  picture: https://hasanunal.github.io/Hasanunal-Jekyll-Theme/assets/img/profile-picture/pp # jpg ve webp formatında eklenmeli
   username: hasanunal # kullanıcı adı
   github: 
   codepen: 
@@ -31,7 +31,7 @@ author:
 googlewebfonts: family=Ubuntu:wght@300;400;500;700&family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,300;1,400;1,500;1,600;1,700;1,900
 
 # URL Ayarları
-url: "https://hasanunal.github.io/hasanunal-jekyll/" # domain adresi
+url: "https://hasanunal.github.io/Hasanunal-Jekyll-Theme/" # domain adresi
 baseurl: "" # alt dizine kurduysan eğer
 permalink: pretty
 
